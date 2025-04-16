@@ -1,3 +1,12 @@
+import {
+  motion,
+  useMotionTemplate,
+  useScroll,
+  useTransform,
+} from "motion/react";
+import { div } from "motion/react-client";
+import { useRef } from "react";
+
 function homepage() {
   return (
     <>
@@ -43,9 +52,25 @@ function homepage() {
           <div className="max-w-container mx-auto flex flex-col-reverse items-center justify-end gap-y-8 md:flex-row">
             <div className="relative flex-1 md:-mr-16">
               <div className="from-darkgreen absolute top-1/2 right-0 aspect-square w-[600px] translate-x-1/2 -translate-y-1/2 bg-radial to-70% opacity-50"></div>
-              <img src="/guy_filming.jpg" alt="" className="relative" />
+              <ParallaxImg
+                src="/guy_filming.jpg"
+                className="relative"
+                start={100}
+                end={-100}
+                offset={["start start", "end start"]}
+              ></ParallaxImg>
             </div>
-            <div className="z-10 flex-1 md:max-w-1/2">
+            <motion.div
+              className="z-10 flex-1 md:max-w-1/2"
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 100 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.75,
+                staggerChildren: 0.5,
+              }}
+              viewport={{ amount: 0.75, once: true }}
+            >
               <div className="mb-4 text-3xl sm:text-4xl">
                 <h2>Onze</h2>
                 <h2 className="font-[800]">werkwijze</h2>
@@ -57,7 +82,7 @@ function homepage() {
                 waarin we jouw boodschap vertalen naar beeld dat raakt,
                 inspireert en blijft hangen.
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section className="relative overflow-x-clip py-40">
@@ -208,32 +233,13 @@ function homepage() {
               <h2 className="font-[800]">maar maatwerk</h2>
             </div>
             <div className="flex flex-col justify-between gap-16 px-8 lg:flex-row">
-              <div className="max-w-[500px] lg:max-w-none">
-                <img src="/guy_filming.jpg" alt="" />
-                <div className="relative flex justify-end">
-                  <div className="relative w-5/6">
-                    <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">
-                      1.
-                    </p>
-                    <h3 className="mt-3 mb-2 text-3xl font-bold">
-                      Jouw idee <br />
-                      Onze focus
-                    </h3>
-                    <p>
-                      We starten met een persoonlijk gesprek om jouw visie
-                      helder te krijgen. Geen standaard oplossingen—alleen
-                      maatwerk.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-end">
-                <div className="max-w-[500px] lg:mt-40 lg:max-w-none">
+              <ParallaxContainer start={50} end={0}>
+                <div className="max-w-[500px] lg:max-w-none">
                   <img src="/guy_filming.jpg" alt="" />
                   <div className="relative flex justify-end">
                     <div className="relative w-5/6">
                       <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">
-                        2.
+                        1.
                       </p>
                       <h3 className="mt-3 mb-2 text-3xl font-bold">
                         Jouw idee <br />
@@ -247,26 +253,51 @@ function homepage() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="max-w-[500px] lg:mt-80 lg:max-w-none">
-                <img src="/guy_filming.jpg" alt="" />
-                <div className="relative flex justify-end">
-                  <div className="relative w-5/6">
-                    <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">
-                      3.
-                    </p>
-                    <h3 className="mt-3 mb-2 text-3xl font-bold">
-                      Jouw idee <br />
-                      Onze focus
-                    </h3>
-                    <p>
-                      We starten met een persoonlijk gesprek om jouw visie
-                      helder te krijgen. Geen standaard oplossingen—alleen
-                      maatwerk.
-                    </p>
+              </ParallaxContainer>
+              <ParallaxContainer start={100} end={-50}>
+                <div className="flex justify-end">
+                  <div className="max-w-[500px] lg:mt-40 lg:max-w-none">
+                    <img src="/guy_filming.jpg" alt="" />
+                    <div className="relative flex justify-end">
+                      <div className="relative w-5/6">
+                        <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">
+                          2.
+                        </p>
+                        <h3 className="mt-3 mb-2 text-3xl font-bold">
+                          Jouw idee <br />
+                          Onze focus
+                        </h3>
+                        <p>
+                          We starten met een persoonlijk gesprek om jouw visie
+                          helder te krijgen. Geen standaard oplossingen—alleen
+                          maatwerk.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ParallaxContainer>
+              <ParallaxContainer start={200} end={-50}>
+                <div className="max-w-[500px] lg:mt-80 lg:max-w-none">
+                  <img src="/guy_filming.jpg" alt="" />
+                  <div className="relative flex justify-end">
+                    <div className="relative w-5/6">
+                      <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">
+                        3.
+                      </p>
+                      <h3 className="mt-3 mb-2 text-3xl font-bold">
+                        Jouw idee <br />
+                        Onze focus
+                      </h3>
+                      <p>
+                        We starten met een persoonlijk gesprek om jouw visie
+                        helder te krijgen. Geen standaard oplossingen—alleen
+                        maatwerk.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </ParallaxContainer>
             </div>
           </div>
         </section>
@@ -274,5 +305,42 @@ function homepage() {
     </>
   );
 }
+
+const ParallaxImg = ({ className, alt, src, start, end }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: [`${start}px end`, `end ${end * -1}px`],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
+
+  const transform = useMotionTemplate`translateY(${y}px)`;
+  return (
+    <motion.img
+      className={className}
+      src={src}
+      ref={ref}
+      style={{ transform }}
+    ></motion.img>
+  );
+};
+
+const ParallaxContainer = ({ children, className, start, end }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: [`${start}px end`, `end ${end * -1}px`],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
+
+  const transform = useMotionTemplate`translateY(${y}px)`;
+  return (
+    <motion.div className={className} ref={ref} style={{ transform }}>
+      {children}
+    </motion.div>
+  );
+};
 
 export default homepage;
