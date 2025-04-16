@@ -8,7 +8,12 @@ import { motion } from "motion/react";
 
 createRoot(document.getElementById("homepage")).render(
   <>
-    <ReactLenis root>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.075,
+      }}
+    >
       <Navigation />
       <Homepage />
       <Footer />

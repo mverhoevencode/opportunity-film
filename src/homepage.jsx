@@ -4,7 +4,6 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { div } from "motion/react-client";
 import { useRef } from "react";
 
 function homepage() {
@@ -60,17 +59,7 @@ function homepage() {
                 offset={["start start", "end start"]}
               ></ParallaxImg>
             </div>
-            <motion.div
-              className="z-10 flex-1 md:max-w-1/2"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 100 }}
-              transition={{
-                ease: "easeInOut",
-                duration: 0.75,
-                staggerChildren: 0.5,
-              }}
-              viewport={{ amount: 0.75, once: true }}
-            >
+            <motion.div className="z-10 flex-1 md:max-w-1/2" {...defaultEntry}>
               <div className="mb-4 text-3xl sm:text-4xl">
                 <h2>Onze</h2>
                 <h2 className="font-[800]">werkwijze</h2>
@@ -87,10 +76,13 @@ function homepage() {
         </section>
         <section className="relative overflow-x-clip py-40">
           <div>
-            <div className="mb-16 text-center text-3xl sm:text-4xl">
+            <motion.div
+              className="mb-16 text-center text-3xl sm:text-4xl"
+              {...defaultEntry}
+            >
               <h2>Bekijk ons werk en laat je</h2>
               <h2 className="font-[800]">inspireren</h2>
-            </div>
+            </motion.div>
           </div>
           <div className="left-0 overflow-x-clip">
             <div className="animate-slider relative flex justify-start gap-10">
@@ -168,15 +160,21 @@ function homepage() {
         </section>
         <section className="px-4 py-40 sm:px-8">
           <div className="max-w-container mx-auto">
-            <div className="mb-4 text-center text-3xl sm:text-4xl">
+            <motion.div
+              className="mb-4 text-center text-3xl sm:text-4xl"
+              {...defaultEntry}
+            >
               <h2>Alles in huis voor jouw</h2>
               <h2 className="font-[800]">perfecte productie</h2>
-            </div>
-            <p className="mx-auto mb-16 max-w-4xl text-center leading-8">
+            </motion.div>
+            <motion.p
+              className="mx-auto mb-16 max-w-4xl text-center leading-8"
+              {...defaultEntry}
+            >
               Met onze state-of-the-art gear en passie voor detail maken we van
               jouw productie een meesterwerk. Jouw verhaal verdient niets minder
               dan het allerbeste.
-            </p>
+            </motion.p>
             <div className="flex flex-col justify-between gap-8 lg:flex-row">
               <div className="from-darkgreen absolute left-0 -z-10 aspect-square w-[300px] -translate-x-1/2 -translate-y-1/2 bg-radial to-70% opacity-50"></div>
               <div className="flex flex-col justify-between gap-8 sm:flex-row">
@@ -226,14 +224,17 @@ function homepage() {
             </div>
           </div>
         </section>
-        <section className="px-4 py-40 sm:px-8">
+        <section className="px-4 pt-40 sm:px-8">
           <div className="max-w-container mx-auto">
-            <div className="mb-16 text-center text-3xl sm:text-4xl">
+            <motion.div
+              className="mb-16 text-center text-3xl sm:text-4xl"
+              {...defaultEntry}
+            >
               <h2>Geen standaard oplossingen</h2>
               <h2 className="font-[800]">maar maatwerk</h2>
-            </div>
+            </motion.div>
             <div className="flex flex-col justify-between gap-16 px-8 lg:flex-row">
-              <ParallaxContainer start={50} end={0}>
+              <ParallaxContainer start={0} end={-50}>
                 <div className="max-w-[500px] lg:max-w-none">
                   <img src="/guy_filming.jpg" alt="" />
                   <div className="relative flex justify-end">
@@ -254,7 +255,7 @@ function homepage() {
                   </div>
                 </div>
               </ParallaxContainer>
-              <ParallaxContainer start={100} end={-50}>
+              <ParallaxContainer start={100} end={-150}>
                 <div className="flex justify-end">
                   <div className="max-w-[500px] lg:mt-40 lg:max-w-none">
                     <img src="/guy_filming.jpg" alt="" />
@@ -277,7 +278,7 @@ function homepage() {
                   </div>
                 </div>
               </ParallaxContainer>
-              <ParallaxContainer start={200} end={-50}>
+              <ParallaxContainer start={200} end={-225}>
                 <div className="max-w-[500px] lg:mt-80 lg:max-w-none">
                   <img src="/guy_filming.jpg" alt="" />
                   <div className="relative flex justify-end">
@@ -305,6 +306,16 @@ function homepage() {
     </>
   );
 }
+
+const defaultEntry = {
+  initial: { y: 50, opacity: 0 },
+  whileInView: { y: 0, opacity: 100 },
+  transition: {
+    ease: "easeInOut",
+    duration: 0.75,
+  },
+  viewport: { amount: 0.75, once: true },
+};
 
 const ParallaxImg = ({ className, alt, src, start, end }) => {
   const ref = useRef(null);
