@@ -4,7 +4,28 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { useRef } from "react";
+import React, { useRef } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 5,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 function homepage() {
   return (
@@ -84,72 +105,81 @@ function homepage() {
               <h2 className="font-[800]">inspireren</h2>
             </motion.div>
           </div>
-          <div className="left-0 overflow-x-clip">
-            <div className="animate-slider relative flex justify-start gap-10">
-              <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
-                <img
-                  src="/guy_filming.jpg"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
+          <Carousel
+            responsive={responsive}
+            showDots
+            renderDotsOutside
+            dotListClass=""
+            draggable={true}
+            swipeable={true}
+            className="z-10"
+          >
+            <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
             </div>
+            <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+            <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+            <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+            <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+            <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+            <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+            <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+            <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
+              <img
+                src="/guy_filming.jpg"
+                alt=""
+                className="pointer-events-none h-full w-full object-cover select-none"
+              />
+            </div>
+          </Carousel>
+          <div className="left-0 overflow-x-clip">
+            <div className="animate-slider relative flex justify-start gap-10"></div>
           </div>
           <div className="flex justify-center">
             <div className="bg-darkgreen/20 max-w-container absolute top-0 mx-auto h-full w-full">
