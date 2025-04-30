@@ -2,6 +2,7 @@
 
 @theme {
   --color-darkgreen: #1f3c00;
+  --color-darkblack: #040800;
   --spacing-container: 1400px;
 
   --animate-slider: slide 90s linear infinite;
