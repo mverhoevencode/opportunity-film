@@ -49,7 +49,7 @@ function homepage() {
                 </div>
                 <a
                   href="javascript:;"
-                  className="mb-16 w-max rounded-full border px-8 py-3"
+                  className="mb-16 w-max cursor-pointer rounded-full border px-8 py-3"
                 >
                   Ontdek de mogelijkheden
                 </a>
