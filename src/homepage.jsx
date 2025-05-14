@@ -7,6 +7,8 @@ import {
 import React, { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import guy_filming from "./assets/guy_filming.jpg";
+import reel from "./assets/opportunity_film_reel.mp4";
 
 const responsive = {
   superLargeDesktop: {
@@ -39,7 +41,7 @@ function homepage() {
               loop
               className="absolute h-full w-full object-cover"
             >
-              <source src="/REEL_OF_V2.mp4" type="video/mp4" />
+              <source src={reel} type="video/mp4" />
             </video>
             <div className="relative flex h-full w-full flex-col items-center justify-end px-4 sm:px-8">
               <div className="flex h-1/2 w-full flex-col items-center justify-between py-[20px] pt-16">
@@ -73,7 +75,7 @@ function homepage() {
             <div className="relative flex-1 md:-mr-16">
               <div className="from-darkgreen absolute top-1/2 right-0 aspect-square w-[600px] translate-x-1/2 -translate-y-1/2 bg-radial to-70% opacity-50"></div>
               <ParallaxImg
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 className="relative"
                 start={100}
                 end={-100}
@@ -116,63 +118,63 @@ function homepage() {
           >
             <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 -rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
             </div>
             <div className="z-20 h-80 w-56 min-w-56 rotate-[5deg]">
               <img
-                src="/guy_filming.jpg"
+                src={guy_filming}
                 alt=""
                 className="pointer-events-none h-full w-full object-cover select-none"
               />
@@ -266,7 +268,7 @@ function homepage() {
             <div className="flex flex-col justify-between gap-16 px-8 lg:flex-row">
               <ParallaxContainer start={0} end={-50}>
                 <div className="max-w-[500px] lg:max-w-none">
-                  <img src="/guy_filming.jpg" alt="" />
+                  <img src={guy_filming} alt="" />
                   <div className="relative flex justify-end">
                     <div className="relative w-5/6">
                       <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">
@@ -288,7 +290,7 @@ function homepage() {
               <ParallaxContainer start={100} end={-150}>
                 <div className="flex justify-end">
                   <div className="max-w-[500px] lg:mt-40 lg:max-w-none">
-                    <img src="/guy_filming.jpg" alt="" />
+                    <img src={guy_filming} alt="" />
                     <div className="relative flex justify-end">
                       <div className="relative w-5/6">
                         <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">
@@ -310,7 +312,7 @@ function homepage() {
               </ParallaxContainer>
               <ParallaxContainer start={200} end={-225}>
                 <div className="max-w-[500px] lg:mt-80 lg:max-w-none">
-                  <img src="/guy_filming.jpg" alt="" />
+                  <img src={guy_filming} alt="" />
                   <div className="relative flex justify-end">
                     <div className="relative w-5/6">
                       <p className="absolute left-0 -translate-x-full -translate-y-1/2 pr-3 text-8xl font-bold">

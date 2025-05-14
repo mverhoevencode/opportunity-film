@@ -5,6 +5,7 @@ import Navigation from "./navigation.jsx";
 import Footer from "./footer.jsx";
 import ReactLenis from "lenis/react";
 import { useState } from "react";
+import logo from "./assets/logo.png";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -52,7 +53,7 @@ function Login({ setLoggedIn }) {
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
               alt="Your Company"
-              src="/logo.png"
+              src={logo}
               className="mx-auto h-20 w-auto"
             />
             <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight">

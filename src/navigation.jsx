@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "./assets/logo.png";
 
 function Navigation() {
   const [atTop, setAtTop] = useState(true);
@@ -20,7 +21,7 @@ function Navigation() {
           (atTop ? "" : "bg-darkblack/50 backdrop-blur-xs")
         }
       >
-        <img src="/logo.png" alt="" className="w-20" />
+        <img src={logo} alt="" className="w-20" />
         <ul className="flex gap-x-8">
           <li>
             <a href="javascript:;" className="cursor-pointer hover:opacity-50">

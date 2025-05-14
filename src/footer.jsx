@@ -1,3 +1,5 @@
+import logo from "./assets/logo.png";
+
 function Footer() {
   return (
     <>
@@ -10,11 +12,7 @@ function Footer() {
               <h2>te maken?</h2>
             </div>
             <div className="">
-              <img
-                src="/logo.png"
-                alt="opportunity-film-logo"
-                className="w-32"
-              />
+              <img src={logo} alt="opportunity-film-logo" className="w-32" />
               <div className="flex gap-x-2">
                 <div className="bg-darkgreen/20 h-16 w-16 p-4">
                   <div className="h-full w-full bg-white"></div>
